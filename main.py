@@ -35,7 +35,11 @@ topic = st.text_input("Enter a topic:")
 # Slider for number of slides
 num_slides = st.slider("Select number of slides:", min_value=3, max_value=20, value=7)
 
-# Get selected model
+# Add language selection dropdown
+languages = ["English", "French", "Spanish", "German", "Ukrainian", "Arabic"]  # Added Ukrainian and Arabic
+language = st.selectbox("Select Language:", languages, index=0)
+
+# Get selected model and language
 ollama_model = select_ollama_model()
 
 if st.button("Generate") and topic:
@@ -72,7 +76,8 @@ if st.button("Generate") and topic:
         if messages:
             update_status_with_cursor(messages.pop())
 
-    data = slide_data_gen(topic, num_slides, ollama_model)
+    # Generate slide data with the selected language
+    data = slide_data_gen(topic, num_slides, ollama_model, language)
     progress_bar.progress(50)
 
     # Update status with another random message and dancing cursor
@@ -89,7 +94,7 @@ if st.button("Generate") and topic:
 
     # Create a file name using the topic, model, and current date
     date_stamp = datetime.now().strftime("%Y%m%d")
-    sanitized_topic = topic.replace(" ", "_")  # Replace spaces with underscores
+    sanitized_topic = topic.replace(" ", "_")[:10]  # Truncate topic to 10 characters
     file_name = f"{sanitized_topic}_{ollama_model}_{date_stamp}.pptx"
 
     st.download_button(

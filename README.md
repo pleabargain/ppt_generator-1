@@ -13,12 +13,16 @@ A local LLM assisted powerpoint generation tool
 Idea generation with Ollama running locally. This will be useful for generating ideas for presentations. It will pull the available local models and let you select one.
 
 # What
-Don't expect a lot of features. It's a simple tool to generate (generic) powerpoint content. It doesn't support images and there is no styling to speak of. It's just a simple tool to generate ppt content. There all kinds of things that can be added to it.
+Don't expect a lot of features. 
+
+
+I did add a language option. It's not perfect but it's a start.
+
+It's a simple tool to generate (generic) powerpoint content. It doesn't support images and there is no styling to speak of. It's just a simple tool to generate ppt content. There all kinds of things that can be added to it.
 
 * add image generation
 * add styling
 * add speaker notes
-* add speaker notes to slides
 * add slide numbers
 * add slide layouts
 * reference color palettes
