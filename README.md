@@ -1,23 +1,46 @@
+
+#  original idea inspired by 
+https://github.com/Govind-S-B/ppt_generator
+
+
+
 # PPT Generator
 A local LLM assisted ppt generation tool 
 
 ## Why  
-Writing presentations for course assignments is just boilerplate work most often, especially when even the lecturers dont even care about it.
-Thats why I automated the boilerplate work, just enter a topic and the tool generates a simple presentation , enough to satisfy the base course requirement.
+Idea generation with Ollama running locally. This will be useful for generating ideas for presentations. And also for generating ppt content. It will pull the available local models and let you select one.
+
 
 ## Running Locally
 install [ollama](https://ollama.ai/download)
 and have it up and running with command `ollama serve` ( applicable to some systems only )  
 
-download the required model ( this can be changed in this [line](https://github.com/Govind-S-B/ppt_generator/blob/main/ppt_data_gen.py#L24) )
+
+
 ```
-ollama pull dolphin2.1-mistral
+ollama pull llama3.2
 ```
+
+
+
+install the required python dependencies
+```
+pip install -r requirements.txt
+```
+
+maybe these too
+
+```
+pip install -U langchain-community
+pip install -U langchain-ollama
+```
+
+
 
 
 clone the repo and move into the directory
 ```
-git clone https://github.com/Govind-S-B/ppt_generator.git
+git clone 
 cd ppt_generator
 ```
 install the required python dependencies
@@ -25,6 +48,7 @@ install the required python dependencies
 pip install -r requirements.txt
 ```
 run the streamlit app
+
 ```
-streamlit run main.py
+python -m streamlit run main.py
 ```
